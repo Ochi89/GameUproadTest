@@ -1,0 +1,44 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.db
+GRANDIUS/操作説昁Etxt
+*.suo
+GRANDIUS/.vs/CraftGame3D/v15/
+GRANDIUS/ビルドするには/
+GRANDIUS/x64/
+GRANDIUS/Debug/
+GRANDIUS/Release/
+Dxlib.h/
+GRANDIUS/Log.txt
+.vs/
+GRANDIUS/CraftGame3D.vcxproj.user
