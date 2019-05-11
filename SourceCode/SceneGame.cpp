@@ -49,23 +49,23 @@ const float SceneGame::MAX_CHANGE_BGM_WAIT_TIME = 240.0f;			//	BGM切り替え�
 //-----------------------------------------------------------------------------
 SceneGame::SceneGame()
 {
-	//	まだどこも指していないので、NULLで初期化
-    m_pPlayerManager = NULL;
-	m_pEnemyManager = NULL;
-	m_pBossManager = NULL;
-	m_pShotManager = NULL;
-	m_pStayShotManager = NULL;
-	m_pItemManager = NULL;
-	m_pUILife = NULL;
-	m_pUIGauge = NULL;
-	m_pUIStayShot = NULL;
-	m_pUIGameOver = NULL;
-	m_pUIBackPixel = NULL;
-	m_pUICongratulation = NULL;
-	m_pEffekseerManager = NULL;
-	m_pBackgroundMusic = NULL;
-	m_pWarning = NULL;
-	m_pPlayCounter = NULL;
+	//	まだどこも指していないので、nullptr で初期化
+    m_pPlayerManager = nullptr ;
+	m_pEnemyManager = nullptr ;
+	m_pBossManager = nullptr ;
+	m_pShotManager = nullptr ;
+	m_pStayShotManager = nullptr ;
+	m_pItemManager = nullptr ;
+	m_pUILife = nullptr ;
+	m_pUIGauge = nullptr ;
+	m_pUIStayShot = nullptr ;
+	m_pUIGameOver = nullptr ;
+	m_pUIBackPixel = nullptr ;
+	m_pUICongratulation = nullptr ;
+	m_pEffekseerManager = nullptr ;
+	m_pBackgroundMusic = nullptr ;
+	m_pWarning = nullptr ;
+	m_pPlayCounter = nullptr ;
 }
 
 //-----------------------------------------------------------------------------
@@ -82,6 +82,9 @@ SceneGame::~SceneGame()
 //-----------------------------------------------------------------------------
 void SceneGame::Create()
 {
+	//	ロード画面の作成
+	LOADING->CreateInstance();
+
 	//	ロードの描画
 	LOADING->Draw();
 
@@ -139,6 +142,7 @@ void SceneGame::Create()
     m_pUIGameOver->Create();
 
 	//	フォントの作成処理
+	FONT->CreateInstance();
 	FONT->Create();
 
 	//	サウンドの作成
@@ -156,6 +160,9 @@ void SceneGame::Create()
 
 	m_isDebug = false;
 	m_isDebugDraw = false;
+
+	//	ロード画面の解放
+	LOADING->DeleteInstance();
 }
 
 //-----------------------------------------------------------------------------
@@ -207,6 +214,7 @@ void SceneGame::Release()
 
 	//	警告の解放
 	CommonSafe::Delete(m_pWarning);
+
 }
 
 //-----------------------------------------------------------------------------
@@ -577,4 +585,7 @@ void SceneGame::_FinalRelease()
 
 	//	警告の解放
 	CommonSafe::Delete(m_pWarning);
+
+	//	演出管理クラスの解放
+	PRODUCTION->DeleteInstance();
 }

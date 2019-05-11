@@ -42,3 +42,6 @@ Dxlib.h/
 GRANDIUS/Log.txt
 .vs/
 GRANDIUS/CraftGame3D.vcxproj.user
+Debug/
+Log.txt
+CraftGame3D.vcxproj.user

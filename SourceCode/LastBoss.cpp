@@ -87,20 +87,20 @@ LastBoss::LastBoss(const int _bodyModelHandle, const int _sideBarrelModelHandle,
 		CommonDebug::Assert((m_bossPartsArm[i].m_modelHandle <= -1), " [ LastBoss.cpp ] : error : model loading failed.");
 		CommonDebug::Assert((m_bossPartsCore[i].m_modelHandle <= -1), " [ LastBoss.cpp ] : error : model loading failed.");
 
-		//	まだどこも指していないので、NULLで初期化
-		m_effectLaser[i] = NULL;
-		m_effectInjection[i] = NULL;
+		//	まだどこも指していないので、nullptr で初期化
+		m_effectLaser[i] = nullptr ;
+		m_effectInjection[i] = nullptr ;
 	}
 
-	//	まだどこも指していないので、NULLで初期化
-	m_effectHit = NULL;
+	//	まだどこも指していないので、nullptr で初期化
+	m_effectHit = nullptr ;
 
 	for (int i = 0; i < CommonConstant::MAX_BOSS_EXPLOSION_NUM; i++)
 	{
-		m_effectExplosion[i] = NULL;
+		m_effectExplosion[i] = nullptr ;
 	}
 
-	m_effectLastExplosion = NULL;
+	m_effectLastExplosion = nullptr ;
 }
 
 //-----------------------------------------------------------------------------

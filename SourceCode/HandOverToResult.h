@@ -29,8 +29,14 @@ public:
 	//	デストラクタ
 	~HandOverToResult();
 
-	//	生成
-	HandOverToResult* GetInstance();
+	//	インスタンスの作成
+	static void CreateInstance();
+
+	//	インスタンスの削除
+	static void DeleteInstance();
+
+	//	インスタンスの取得
+	static HandOverToResult* GetInstance();
 
 	//	リセット
 	void Reset();
@@ -69,7 +75,7 @@ private:
 
 //=================== メンバ変数 ===================//
 
-	static HandOverToResult		s_instance;				//	インスタンス
+	static HandOverToResult*	s_instance;				//	インスタンス
 	int							m_life;					//	ライフ
 	int							m_destructionNum;		//	討伐数
 	bool						m_isClear;				//	クリアしたか

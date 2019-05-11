@@ -28,14 +28,20 @@ public:
 	//	デストラクタ
 	~Fade();
 
+	//	インスタンスの作成
+	static void CreateInstance();
+
+	//	インスタンスの削除
+	static void DeleteInstance();
+
+	//	インスタンスの取得
+	static Fade* GetInstance();
+
 	//	更新処理
 	void Update();
 
 	//	フェード開始
 	void IsFadeStart();
-
-	//	インスタンスの生成
-	Fade* GetInstance();
 
 private:
 
@@ -57,7 +63,7 @@ private:
 
 //=================== メンバ変数 ===================//
 
-	static Fade		s_instance;			//	インスタンス
+	static Fade*	s_instance;			//	インスタンス
 	int				m_alpha;			//	不透明度
 	bool			m_isOneTime;		//	開始時のみ
 	bool			m_isFadeIn;			//	フェードイン

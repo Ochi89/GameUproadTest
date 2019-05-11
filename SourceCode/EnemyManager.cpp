@@ -60,7 +60,7 @@ EnemyManager::EnemyManager()
 	{
 		for (int j = 0; j < CommonConstant::MAX_ENEMY_ENTRY_NUM; j++)
 		{
-			m_entryBuffer[i].m_pBuf[j] = NULL;
+			m_entryBuffer[i].m_pBuf[j] = nullptr ;
 			m_entryBuffer[i].m_isInUse[j] = false;
 		}
 	}
@@ -282,7 +282,7 @@ EnemyBase* EnemyManager::GetEnemyPtr(const int _num)
 		}
 	}
 
-	return NULL;
+	return nullptr ;
 }
 
 //-----------------------------------------------------------------------------

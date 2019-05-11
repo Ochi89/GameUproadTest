@@ -22,7 +22,7 @@ SoundEffect::SoundEffect()
 	{
 		for (int j = 0; j < CommonConstant::MAX_ENEMY_SE_NUM; j++)
 		{
-			m_seBuffer[i].m_pBuf[j] = NULL;
+			m_seBuffer[i].m_pBuf[j] = nullptr ;
 			m_seBuffer[i].m_isInUse[j] = false;
 		}
 

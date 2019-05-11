@@ -34,7 +34,7 @@ const COLOR_F	EnemyBase::COLOR_DECAY_RED = GetColorF(0.5f, 0.0f, 0.0f, 1.0f);		/
 //	@brief	コンストラクタ
 //-----------------------------------------------------------------------------
 EnemyBase::EnemyBase(const int _modelHandle)
-	: m_effectExplosion(NULL)
+	: m_effectExplosion(nullptr )
 {
 	//	モデルの複製
 	m_modelHandle = MV1DuplicateModel(_modelHandle);
@@ -54,7 +54,7 @@ EnemyBase::EnemyBase(const int _modelHandle)
 
 	//	エフェクトの読み込み
 	m_effectExplosion = new EffekseerEmitter("Data/Effect/Explosion/Explosion3.efk");
-	CommonDebug::Assert((m_effectExplosion == NULL), " [ EnemyBase.cpp ] : error : missing effect is null.");
+	CommonDebug::Assert((m_effectExplosion == nullptr ), " [ EnemyBase.cpp ] : error : missing effect is null.");
 }
 
 //-----------------------------------------------------------------------------

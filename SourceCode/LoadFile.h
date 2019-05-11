@@ -32,8 +32,14 @@ public:
 
 	~LoadFile();								//	デストラクタ
 	
-	//	生成
-	LoadFile* GetInstance();
+	//	インスタンスの作成
+	static void CreateInstance();
+
+	//	インスタンスの削除
+	static void DeleteInstance();
+
+	//	インスタンスの取得
+	static LoadFile* GetInstance();
 
 	//	CSV ２次元ファイルの読み込み
 	bool LoadCsvTwoDimensionsFile(const char* _fileName);
@@ -88,7 +94,7 @@ private:
 
 //=================== メンバ変数 ===================//
 
-	static LoadFile		m_instance;																		//	インスタンス
+	static LoadFile*	s_instance;																		//	インスタンス
 	int					m_twoDimensionsData[CommonConstant::MAX_CSV_NUM][CommonConstant::MAX_CSV_NUM];	//	2次元ファイル読み込み用
 	int					m_data[CommonConstant::MAX_CSV_NUM];											//	ファイル読み込み用
 

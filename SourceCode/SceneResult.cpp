@@ -20,6 +20,8 @@
 #include "UIBackPixel.h"
 #include "SoundEffect.h"
 #include "Sound.h"
+#include "LoadFile.h"
+#include "UIScore.h"
 
 //-----------------------------------------------------------------------------
 //	@brief	静的定数
@@ -31,11 +33,11 @@ const float SceneResult::MAX_CHANGE_SCENE_WAIT_TIME = 60.0f;		//	シーン切り
 //-----------------------------------------------------------------------------
 SceneResult::SceneResult()
 {
-	//	まだどこも指していないので、NULLで初期化
-    m_pPlayerManager = NULL;
-	m_pRanking = NULL;
-	m_pUIBackPixel = NULL;
-	m_pBackgroundMusic = NULL;
+	//	まだどこも指していないので、nullptr で初期化
+    m_pPlayerManager = nullptr ;
+	m_pRanking = nullptr ;
+	m_pUIBackPixel = nullptr ;
+	m_pBackgroundMusic = nullptr ;
 }
 
 //-----------------------------------------------------------------------------
@@ -84,6 +86,7 @@ void SceneResult::Release()
 
 	//	BGMの解放
 	CommonSafe::Delete(m_pBackgroundMusic);
+
 }
 
 //-----------------------------------------------------------------------------

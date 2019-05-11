@@ -27,10 +27,10 @@ const float ItemManager::MIN_X_POS = -110.0f;	//	X座標の最小
 //-----------------------------------------------------------------------------
 ItemManager::ItemManager()
 {
-	//	まだどこも指していないので、NULLで初期化
+	//	まだどこも指していないので、nullptr で初期化
 	for (int i = 0; i < CommonConstant::MAX_ITEM_NUM; i++)
 	{
-		m_pItem[i] = NULL;
+		m_pItem[i] = nullptr ;
 	}
 
 	//	各変数の初期化
@@ -199,7 +199,7 @@ Item* ItemManager::GetItemPtr(const int _num)
 		}
 	}
 
-	return NULL;
+	return nullptr ;
 }
 
 //-----------------------------------------------------------------------------

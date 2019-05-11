@@ -54,9 +54,9 @@ MediumBoss::MediumBoss(const int _modelHandle)
 	m_dir = CommonConstant::ORIGIN;
 	m_angle = CommonConstant::ORIGIN;
 
-	//	まだどこも指していないので、NULLで初期化
-	m_effectHit = NULL;
-	m_effectExplosion = NULL;
+	//	まだどこも指していないので、nullptr で初期化
+	m_effectHit = nullptr ;
+	m_effectExplosion = nullptr ;
 }
 
 //-----------------------------------------------------------------------------

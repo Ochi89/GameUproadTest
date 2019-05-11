@@ -34,7 +34,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	//	シーンマネージャーの作成
     SceneManager* pSceneManager = new SceneManager();
-    if (CommonDebug::Assert((pSceneManager == NULL), " [ Main.cpp ] : error : create scene manager failed.")) { DxLib_End(); return 0; }
+    if (CommonDebug::Assert((pSceneManager == nullptr ), " [ Main.cpp ] : error : create scene manager failed.")) { DxLib_End(); return 0; }
 
 	//	タイトルシーンとして作成し、初期化する
     pSceneManager->Create();

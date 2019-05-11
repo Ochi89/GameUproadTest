@@ -29,8 +29,8 @@
 PlayerManager::PlayerManager()
 	: m_sourceModelHandle(-1)
 {
-	//	まだどこも指していないので、NULL
-	m_pPlayer = NULL;
+	//	まだどこも指していないので、nullptr 
+	m_pPlayer = nullptr ;
 }
 
 //-----------------------------------------------------------------------------

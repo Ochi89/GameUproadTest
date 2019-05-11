@@ -48,9 +48,9 @@ StayShot::StayShot()
 	m_hitRect.m_vertexTop = CommonConstant::ORIGIN;
 	m_hitRect.m_vertexUnder = CommonConstant::ORIGIN;
 
-	//	まだどこも指していないので、NULLで初期化
-	m_effectMove = NULL;
-	m_effectStay = NULL;
+	//	まだどこも指していないので、nullptr で初期化
+	m_effectMove = nullptr ;
+	m_effectStay = nullptr ;
 }
 
 //-----------------------------------------------------------------------------

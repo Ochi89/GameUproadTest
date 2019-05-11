@@ -272,7 +272,7 @@ namespace CommonSafe
 		if (_pointer)
 		{
 			delete _pointer;
-			_pointer = NULL;
+			_pointer = nullptr ;
 			return;
 		}
     }
@@ -287,7 +287,7 @@ namespace CommonSafe
         {
             _pointer->Release();
             delete _pointer;
-            _pointer = NULL;
+            _pointer = nullptr ;
 			return;
 		}
     }

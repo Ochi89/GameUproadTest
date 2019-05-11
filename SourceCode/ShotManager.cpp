@@ -31,11 +31,11 @@ const float ShotManager::MIN_Y_POS = 0.0f;		//	Y座標の最小
 //-----------------------------------------------------------------------------
 ShotManager::ShotManager()
 {
-	//	まだどこも指していないので、NULLで初期化
+	//	まだどこも指していないので、nullptr で初期化
 	for (int i = 0; i < CommonConstant::MAX_SHOT_NUM; i++)
 	{
-		m_pPlayerShot[i] = NULL;
-		m_pEnemyShot[i] = NULL;
+		m_pPlayerShot[i] = nullptr ;
+		m_pEnemyShot[i] = nullptr ;
 	}
 
 	//	各変数の初期化
@@ -191,10 +191,10 @@ const int ShotManager::GetListSize(const SHOT_KIND _shotKind) const
 	switch (_shotKind)
 	{
 	case SHOT_KIND::PLAYER_SHOT:
-		return m_usePlayerShotList.size();
+		return (int)m_usePlayerShotList.size();
 
 	case SHOT_KIND::ENEMY_SHOT:
-		return m_useEnemyShotList.size();
+		return (int)m_useEnemyShotList.size();
 	}
 
 	return 0;
@@ -215,7 +215,7 @@ Shot* ShotManager::GetShotPtr(const SHOT_KIND _shotKind, const int _num)
 		return _GetShotPtr(m_useEnemyShotList, _num);
 	}
 
-	return NULL;
+	return nullptr ;
 }
 
 //-----------------------------------------------------------------------------
@@ -239,7 +239,7 @@ Shot* ShotManager::_GetShotPtr(std::list<Shot*>& _useList, const int _num)
 		}
 	}
 
-	return NULL;
+	return nullptr ;
 }
 
 //-----------------------------------------------------------------------------

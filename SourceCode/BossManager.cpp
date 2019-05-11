@@ -27,9 +27,9 @@ const float BossManager::OUT_RANGE_LAST_BOSS = -100.0f;				//	最終ボスの範
 //-----------------------------------------------------------------------------
 BossManager::BossManager()
 {
-	//	まだどこも指していないので、NULL
-	m_mediumBoss.m_pBuf = NULL;
-	m_lastBoss.m_pBuf = NULL;
+	//	まだどこも指していないので、nullptr 
+	m_mediumBoss.m_pBuf = nullptr ;
+	m_lastBoss.m_pBuf = nullptr ;
 }
 
 //-----------------------------------------------------------------------------

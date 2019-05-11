@@ -12,6 +12,11 @@
 #include "HandOverToResult.h"
 
 //-----------------------------------------------------------------------------
+//	@brief	静的メンバ変数の実態の作成
+//-----------------------------------------------------------------------------
+HandOverToResult	*HandOverToResult::s_instance = nullptr;
+
+//-----------------------------------------------------------------------------
 //	@brief	コンストラクタ
 //-----------------------------------------------------------------------------
 HandOverToResult::HandOverToResult()
@@ -32,9 +37,32 @@ HandOverToResult::~HandOverToResult()
 //-----------------------------------------------------------------------------
 //	@brief	インスタンス生成
 //-----------------------------------------------------------------------------
+void HandOverToResult::CreateInstance()
+{
+	//	すでに存在している
+	if (s_instance) { CommonDebug::Log(" [ HandOverToResult.cpp ] : error : Instance has been created."); return; }
+
+	//	nullptrのとき
+	if (!s_instance) { HandOverToResult::s_instance = new HandOverToResult(); }
+
+	//	作成失敗
+	if (!s_instance) { CommonDebug::Log(" [ HandOverToResult.cpp ] : error : Failed to create instance."); return; }
+}
+
+//-----------------------------------------------------------------------------
+//	@brief	インスタンス削除
+//-----------------------------------------------------------------------------
+void HandOverToResult::DeleteInstance()
+{
+	CommonSafe::Delete(s_instance);
+}
+
+//-----------------------------------------------------------------------------
+//	@brief	インスタンス生成
+//-----------------------------------------------------------------------------
 HandOverToResult* HandOverToResult::GetInstance()
 {
-	return &s_instance;
+	return s_instance;
 }
 
 //-----------------------------------------------------------------------------

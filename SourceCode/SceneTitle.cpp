@@ -35,11 +35,11 @@ const float		SceneTitle::START_DEMO_TIME = 600.0f;				//	デモ開始時間
 //-----------------------------------------------------------------------------
 SceneTitle::SceneTitle()
 {
-	//	まだどこも指していないので、NULLで初期化
-    m_pPlayerManager = NULL;
-    m_pBackgroundMusic = NULL;
-	m_pUIBackPixel = NULL;
-	m_pTitle = NULL;
+	//	まだどこも指していないので、nullptr で初期化
+    m_pPlayerManager = nullptr ;
+    m_pBackgroundMusic = nullptr ;
+	m_pUIBackPixel = nullptr ;
+	m_pTitle = nullptr;
 }
 
 //-----------------------------------------------------------------------------

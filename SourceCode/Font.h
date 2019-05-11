@@ -29,8 +29,14 @@ public:
 	//	デストラクタ
 	~Font();
 
-	//	生成
-	Font* GetInstance();
+	//	インスタンスの作成
+	static void CreateInstance();
+
+	//	インスタンスの削除
+	static void DeleteInstance();
+
+	//	インスタンスの取得
+	static Font* GetInstance();
 
 	//	作成処理
 	void Create();
@@ -55,7 +61,7 @@ private:
 
 //=================== メンバ変数 ===================//
 
-	static Font		s_instance;									// インスタンス
+	static Font*	s_instance;									// インスタンス
 	int				m_widht;									// １文字分の横の大きさ
 	int				m_height;									// １文字分の縦の大きさ
 	int				m_textImg[CommonConstant::FONT_NUM];		// １文字分の画像ハンドル

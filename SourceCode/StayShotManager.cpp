@@ -28,10 +28,10 @@ const float StayShotManager::MAX_X_POS = 110.0f;	//	X座標の最大
 //-----------------------------------------------------------------------------
 StayShotManager::StayShotManager()
 {
-	//	まだどこも指していないので、NULLで初期化
+	//	まだどこも指していないので、nullptr で初期化
 	for (int i = 0; i < CommonConstant::MAX_STAY_SHOT_NUM; i++)
 	{
-		m_pStayShot[i] = NULL;
+		m_pStayShot[i] = nullptr ;
 	}
 }
 
@@ -161,7 +161,7 @@ StayShot* StayShotManager::GetStayShotPtr(const int _num)
 		}
 	}
 
-	return NULL;
+	return nullptr ;
 }
 
 //-----------------------------------------------------------------------------

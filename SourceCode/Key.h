@@ -29,8 +29,14 @@ public:
 	//	デストラクタ
 	~Key();
 	
-	//	インスタンスの生成
-	Key* GetInstance();
+	//	インスタンスの作成
+	static void CreateInstance();
+
+	//	インスタンスの削除
+	static void DeleteInstance();
+
+	//	インスタンスの取得
+	static Key* GetInstance();
 
 	//	すべて使用中にする
 	//	シーン切り替え時のときのみ呼ぶ
@@ -60,9 +66,9 @@ private:
 
 //=================== メンバ変数 ===================//
 
-	static Key	s_instance;											//	インスタンス
-	char		m_key[CommonConstant::MAX_KEY_INPUT_NUM];			//	現在のキー入力
-	int			m_prevKey[CommonConstant::MAX_KEY_INPUT_NUM];		//	前のキー入力
+	static Key*		s_instance;											//	インスタンス
+	char			m_key[CommonConstant::MAX_KEY_INPUT_NUM];			//	現在のキー入力
+	int				m_prevKey[CommonConstant::MAX_KEY_INPUT_NUM];		//	前のキー入力
 };
 
 //===================== マクロ =====================//

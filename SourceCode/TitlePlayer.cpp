@@ -41,12 +41,12 @@ TitlePlayer::TitlePlayer(const int _modelHandle)
     m_hitCircle.m_radius = HIT_RADIUS;
     m_hitCircle.m_centerPoint = CommonConstant::ORIGIN;
 
-    //	まだどこも指していないので、NULLで初期化
-    m_effectLaser = NULL;
-    m_effectHit = NULL;
-    m_effectExplosion = NULL;
-    m_effectSpeedUp = NULL;
-    m_effectGetItem = NULL;
+    //	まだどこも指していないので、nullptr で初期化
+    m_effectLaser = nullptr ;
+    m_effectHit = nullptr ;
+    m_effectExplosion = nullptr ;
+    m_effectSpeedUp = nullptr ;
+    m_effectGetItem = nullptr ;
 }
 
 //-----------------------------------------------------------------------------

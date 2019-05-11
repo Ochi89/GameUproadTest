@@ -21,6 +21,7 @@
 #include "Camera.h"
 #include "Sound.h"
 #include "SoundEffect.h"
+#include "Key.h"
 
 //#define CREATE_GRID 0
 
@@ -29,15 +30,15 @@
 //-----------------------------------------------------------------------------
 SceneManager::SceneManager()
 {
-	//	まだどこも指していないので NULL
-	m_pScene = NULL;
-	m_pPad1 = NULL;
-	m_pPad2 = NULL;
-	m_pPad3 = NULL;
-	m_pPad4 = NULL;
-	m_pCamera = NULL;
-	m_pBackGround = NULL;
-	m_pSoundEffect = NULL;
+	//	まだどこも指していないので nullptr 
+	m_pScene = nullptr ;
+	m_pPad1 = nullptr ;
+	m_pPad2 = nullptr ;
+	m_pPad3 = nullptr ;
+	m_pPad4 = nullptr ;
+	m_pCamera = nullptr ;
+	m_pBackGround = nullptr ;
+	m_pSoundEffect = nullptr ;
 }
 
 //-----------------------------------------------------------------------------
@@ -54,6 +55,9 @@ SceneManager::~SceneManager()
 //-----------------------------------------------------------------------------
 void SceneManager::Create()
 {
+	//	キーの作成
+	KEY->CreateInstance();
+
 	//	カメラの作成
 	m_pCamera = new Camera;
 
@@ -79,6 +83,9 @@ void SceneManager::Release()
 {
 	//	パッドの解放
 	_PadRelease();
+
+	//	キーの解放
+	KEY->DeleteInstance();
 
 	//	カメラの解放
 	CommonSafe::Delete(m_pCamera);

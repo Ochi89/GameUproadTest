@@ -36,8 +36,14 @@ public:
 	//	デストラクタ
 	~Menu();
 
-	//	生成
-	Menu* GetInstance();
+	//	インスタンスの作成
+	static void CreateInstance();
+
+	//	インスタンスの削除
+	static void DeleteInstance();
+
+	//	インスタンスの取得
+	static Menu* GetInstance();
 
 	//	初期処理
 	void Initialize();
@@ -117,7 +123,7 @@ private:
 
 //=================== メンバ変数 ===================//
 
-	static Menu		s_instance;									//	インスタンス
+	static Menu*	s_instance;									//	インスタンス
 	int				m_modeNumber;								//	モード番号
 	int				m_countdown;								//	カウントダウン
 	float			m_watiTime;									//	遅延時間

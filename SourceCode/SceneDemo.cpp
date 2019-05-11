@@ -44,21 +44,21 @@ const float		SceneDemo::MAX_CHANGE_LOSE_SCENE_WAIT_TIME = 60.0f;		//	シーン�
 //-----------------------------------------------------------------------------
 SceneDemo::SceneDemo()
 {
-	//	まだどこも指していないので、NULLで初期化
-    m_pPlayerManager = NULL;
-    m_pEnemyManager = NULL;
-	m_pBossManager = NULL;
-	m_pShotManager = NULL;
-	m_pStayShotManager = NULL;
-	m_pItemManager = NULL;
-	m_pUILife = NULL;
-	m_pUIGauge = NULL;
-	m_pUIStayShot = NULL;
-	m_pUIDemoPlay = NULL;
-	m_pUIBackPixel = NULL;
-	m_pEffekseerManager = NULL;
-	m_pBackgroundMusic = NULL;
-	m_pWarning = NULL;
+	//	まだどこも指していないので、nullptr で初期化
+    m_pPlayerManager = nullptr ;
+    m_pEnemyManager = nullptr ;
+	m_pBossManager = nullptr ;
+	m_pShotManager = nullptr ;
+	m_pStayShotManager = nullptr ;
+	m_pItemManager = nullptr ;
+	m_pUILife = nullptr ;
+	m_pUIGauge = nullptr ;
+	m_pUIStayShot = nullptr ;
+	m_pUIDemoPlay = nullptr ;
+	m_pUIBackPixel = nullptr ;
+	m_pEffekseerManager = nullptr ;
+	m_pBackgroundMusic = nullptr ;
+	m_pWarning = nullptr ;
 }
 
 //-----------------------------------------------------------------------------
@@ -75,6 +75,9 @@ SceneDemo::~SceneDemo()
 //-----------------------------------------------------------------------------
 void SceneDemo::Create()
 {
+	//	ロード画面の作成
+	LOADING->CreateInstance();
+
 	//	ロードの描画
 	LOADING->Draw();
 
@@ -128,6 +131,7 @@ void SceneDemo::Create()
 	m_pUIBackPixel = new UIBackPixel();
 
 	//	フォントの作成処理
+	FONT->CreateInstance();
 	FONT->Create();
 
 	//	サウンドの作成
@@ -136,6 +140,9 @@ void SceneDemo::Create()
 
 	//	警告の作成
 	m_pWarning = new Warning();
+
+	//	ロード画面の解放
+	LOADING->DeleteInstance();
 }
 
 //-----------------------------------------------------------------------------
@@ -184,6 +191,7 @@ void SceneDemo::Release()
 
 	//	警告の解放
 	CommonSafe::Delete(m_pWarning);
+
 }
 
 //-----------------------------------------------------------------------------

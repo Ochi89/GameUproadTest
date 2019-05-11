@@ -29,8 +29,14 @@ public:
 	//	デストラクタ
 	~Loading();
 
-	//	生成
-	Loading* GetInstance();
+	//	インスタンスの作成
+	static void CreateInstance();
+
+	//	インスタンスの削除
+	static void DeleteInstance();
+
+	//	インスタンスの取得
+	static Loading* GetInstance();
 
 	//	描画
 	void Draw();
@@ -44,8 +50,8 @@ private:
 
 //=================== メンバ変数 ===================//
 
-	static Loading	m_instance;			//	インスタンス
-	int				m_spriteHendle;		//	スプライトハンドル
+	static Loading*		s_instance;			//	インスタンス
+	int					m_spriteHendle;		//	スプライトハンドル
 
 };
 

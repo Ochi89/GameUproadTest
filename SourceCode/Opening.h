@@ -38,8 +38,14 @@ public:
 	Opening();
 	~Opening();
 
-	//	生成
-	Opening* GetInstance();
+	//	インスタンスの作成
+	static void CreateInstance();
+
+	//	インスタンスの削除
+	static void DeleteInstance();
+
+	//	インスタンスの取得
+	static Opening* GetInstance();
 
 	//	更新処理
 	void Update(Pad& _pad);
@@ -94,22 +100,22 @@ private:
 
 //=================== メンバ変数 ===================//
 
-	static Opening	m_instance;				//	インスタンス
-	UI				m_OpeningUI1;			//	オープニングUI 1
-	UI				m_OpeningUI2;			//	オープニングUI 2
-	UI				m_OpeningUI3;			//	オープニングUI 3
-	UI				m_OpeningUI4;			//	オープニングUI 4
-	UI				m_OpeningUI5;			//	オープニングUI 5
-	UI				m_OpeningUI6;			//	オープニングUI 6
-	Rect			m_backGroundRect;		//	背景
-	Color			m_backGroundColor;		//	背景色
-	int				m_openingCount;			//	オープニングカウント
-	int				m_alpha;				//	アルファ値
-	int				m_alphaSpeed;			//	アルファ速度
-	float			m_waitTime;				//	遅延時間
-	bool			m_isChangeAlpha;		//	アルファ値の切り替えフラグ
-	bool			m_isStart;				//	開始フラグ
-	bool			m_isEndOpening;			//	オープニング終了フラグ
+	static Opening*		s_instance;				//	インスタンス
+	UI					m_OpeningUI1;			//	オープニングUI 1
+	UI					m_OpeningUI2;			//	オープニングUI 2
+	UI					m_OpeningUI3;			//	オープニングUI 3
+	UI					m_OpeningUI4;			//	オープニングUI 4
+	UI					m_OpeningUI5;			//	オープニングUI 5
+	UI					m_OpeningUI6;			//	オープニングUI 6
+	Rect				m_backGroundRect;		//	背景
+	Color				m_backGroundColor;		//	背景色
+	int					m_openingCount;			//	オープニングカウント
+	int					m_alpha;				//	アルファ値
+	int					m_alphaSpeed;			//	アルファ速度
+	float				m_waitTime;				//	遅延時間
+	bool				m_isChangeAlpha;		//	アルファ値の切り替えフラグ
+	bool				m_isStart;				//	開始フラグ
+	bool				m_isEndOpening;			//	オープニング終了フラグ
 
 //===================== 静的定数 ===================//
 
